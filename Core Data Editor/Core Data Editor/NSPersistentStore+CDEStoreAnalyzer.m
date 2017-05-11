@@ -7,8 +7,7 @@
 + (NSString *)typeOfPersistentStoreAtURL_cde:(NSURL *)storeURL {
   NSError *error = nil;
   @try {
-    NSDictionary *metadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType URL:storeURL options:nil error:&error];
-
+    NSDictionary *metadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:nil URL:storeURL error:&error];
     if(metadata == nil) {
       NSLog(@"Failed to determine store metadata: %@", error);
       return nil;
